@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: aabbccdd  #contraseña cuenta
+    volumes:
+      - pgdata:/var/lib/postgresql/data 
+    ports:
+      - "5432:5432"  # puerto de la bdd
+
+volumes:
+  pgdata:
+    driver: local  
